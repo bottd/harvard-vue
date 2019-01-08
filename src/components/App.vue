@@ -54,13 +54,13 @@ export default {
       this.loading = false;
     },
     cycleImage(num) {
-      if (this.treasureIndex + num < this.treasures.length - 1) {
+      if (this.treasures[this.treasureIndex + num]) {
         this.treasureIndex += num;
       }
       else if (num === 1) {
         this.fetchTreasures(this.next);
       }
-      else if (num === -1) {
+      else if (num === -1 && this.prev !== '') {
         this.fetchTreasures(this.prev);
       }
     }
